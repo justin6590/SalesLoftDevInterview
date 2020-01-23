@@ -1,0 +1,46 @@
+Documentation:
+  Enabled: false
+Alias:
+  Enabled: false
+HasAndBelongsToMany:
+  Enabled: false
+DoubleNegation:
+  Enabled: false
+MethodLength:
+  Enabled: true
+  Max: 20
+ClassLength:
+  Enabled: true
+  Max: 150
+AbcSize:
+  Enabled: false
+  Max: 20
+Style/GuardClause:
+  Enabled: false
+Style/Next:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+Style/SymbolArray:
+  EnforcedStyle: brackets
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+    - '**/*.rb'
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+    - config/**/*
+    - bin/*
+    - script/*
+Style/CollectionMethods:
+  # Mapping from undesired method to desired_method
+  # e.g. to use `detect` over `find`:
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'detect'
+    find: 'detect'
+    find_all: 'select'

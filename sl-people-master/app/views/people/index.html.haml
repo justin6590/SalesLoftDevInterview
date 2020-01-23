@@ -1,0 +1,28 @@
+%div.container
+  .people.row
+    %h2 List of People from SalesLoft API
+
+  %br/
+
+  .people.row
+    = link_to 'Email Character Frequencies', frequency_people_path, class: 'btn btn-primary'
+
+    = link_to 'Possible Duplicate People', possible_duplicates_people_path, class: 'btn btn-primary'
+
+  %br/
+
+  .people.content.row
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Name
+          %th Email Address
+          %th Job Title
+      %tbody
+        - @people.each do |p|
+          %tr
+            %td="#{p['first_name']} #{p['last_name']}"
+            %td="#{p['email_address']}"
+            %td="#{p['title']}"
+
+  = will_paginate @people, renderer: BootstrapPagination::Rails

@@ -1,0 +1,36 @@
+:javascript
+  function reload_list(percent) {
+    val = percent.options[percent.selectedIndex].value;
+    var url = location.toString().split('?')[0] + '?percent=' + val;
+    location.assign(url);
+  }
+
+%div{style: 'margin-left: 20px;'}
+  %h3 Shows a list of near duplicates for People.
+
+  %br/
+
+  = link_to 'Back to List of People', people_path, class: 'btn btn-primary'
+
+  = select_tag :threshold, options_for_threshold(params[:threshold]), onchange: 'reload_list(this);'
+  %span= 'Percent of duplicates '
+
+  %br/
+
+  %table{style: '500px; margin-left: 20px;'}
+    %tr
+      %td{style: 'vertical-align: top;'}
+        %table.table.table-hover
+          %thead
+            %tr
+              %th Email
+              %th Possible duplicate
+          %tbody
+            - @possible_email_dups.keys.each do |email|
+              %tr
+                %td="#{email}"
+                %td
+                  - @possible_email_dups[email].each do |dups|
+                    %span= dups[:value]
+                    %span{style: 'color: #000000;'}= "(#{dups[:distance].round(4)})"
+                    %br/
