@@ -47,11 +47,14 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     ast (2.4.0)
+    autoprefixer-rails (9.7.4)
+      execjs
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
-    bootstrap-sass (3.2.0.4)
-      sass (~> 3.2)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.2.4)
     coderay (1.1.2)
     coffee-rails (4.2.2)
@@ -226,6 +229,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.2.1)
+      ffi (~> 1.9)
+    sassc (2.2.1-x64-mingw32)
+      ffi (~> 1.9)
     sexp_processor (4.13.0)
     simplecov (0.17.1)
       docile (~> 1.1)
@@ -272,7 +279,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
-  bootstrap-sass (~> 3.2.0)
+  bootstrap-sass (~> 3.4.1)
   coffee-rails (~> 4.2)
   database_cleaner
   dotenv-rails
