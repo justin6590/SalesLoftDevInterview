@@ -1,6 +1,28 @@
 # SalesLoft Code Challenges
 
-This app fulfills the following code challenges:
+## Getting Started 
+Ensure ruby version is at least 2.7.0
+
+`ruby --version`
+
+Bundle install
+
+`gem install bundle
+bundle install`
+
+Install node dependecies
+
+`yarn install`
+
+Create a .env with SALESLOFT_API_KEY set to your api key
+
+Run rails
+
+Rails server
+
+`navigate to localhost:3000`
+
+## This app fulfills the following code challenges:
 
 *`Part 1`*: Show a list of People records that are available via the API.  Display each Person’s name, email address, and job title.
 
